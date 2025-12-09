@@ -1,0 +1,19 @@
+preload(
+  "IMAGE/back_4.png",
+  "IMAGE/comp_3.png",
+  "IMAGE/hand.png",
+  "IMAGE/1.screw.png",
+  "IMAGE/4.screw.png",
+  "IMAGE/6.screw.png",
+  "IMAGE/8.screw.png",
+  "IMAGE/10.screw.png",
+  "IMAGE/back_1.png",
+  "IMAGE/power.png",
+  "IMAGE/comp.png",
+  "IMAGE/gone_1.png",
+  "IMAGE/Hand.png",
+  "IMAGE/screws.png",
+  "IMAGE/small_screw_1.png",
+  "Sounds/unscrew.mp4",
+  "Sounds/backgroundaudio.mp3"
+);

@@ -1,0 +1,291 @@
+/* --- Menu_script.js ---*/
+.center-bottom {
+  justify-content: center;
+  align-items: flex-end;
+  display: flex;
+}
+.center {
+  justify-content: left;
+  align-items: center;
+  display: flex;
+}
+.contain-image {
+  max-height: 85%;
+  max-width: 85%;
+}
+.center-content {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.mogul_row {
+  height: 25%;
+  width: 100%;
+  display: flex;
+}
+
+#Menu {
+  position: fixed;
+  top: 30px;
+  left: 10px;
+  padding: 20px 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  background: rgb(214, 148, 68);
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+z-index: 9999;
+}
+
+#Menu.enabled {
+  background: rgba(133, 31, 1, 0.74);
+}
+
+.menumodal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100000000;
+  width: 100%;
+  height: 100%;
+  background-color: #1c1c1c;
+  opacity: 0.95;
+  transition: right 0.5s ease;
+}
+
+/* Don't cover the entire screen */
+.menumodal-body {
+  width: 80%;
+  height: 70%;
+  background-color: black;
+  opacity: 1;
+  margin: 0;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  position: fixed;
+  top: 1%;
+  right: 1%;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeSlideOut {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.menumodal.show {
+  display: flex;
+  animation: fadeSlideIn 0.4s ease forwards;
+  left: 0;
+}
+.click-me:hover {
+  cursor: pointer;
+}
+.timekeeper-text {
+  margin-top: 20px;
+  width: 80%;
+  text-align: center;
+  font-family: "Courier New", monospace;
+  color: #00eaff;
+  text-shadow: 0 0 10px #00eaff;
+}
+
+.tk-line {
+  opacity: 0;
+  animation: tkFade 0.8s forwards;
+  margin: 8px 0;
+}
+.tk-line1 {
+  color: white;          /* ← ADD THIS */
+  opacity: 0;
+  animation: tkFade 0.8s forwards;
+  margin: 8px 0;
+}
+
+.tk-line:nth-child(1) {
+  animation-delay: 0.7s;
+}
+.tk-line:nth-child(2) {
+  animation-delay: 1.4s;
+}
+.tk-line:nth-child(3) {
+  animation-delay: 2.1s;
+}
+.tk-line:nth-child(4) {
+  animation-delay: 2.8s;
+}
+.tk-line:nth-child(5) {
+  animation-delay: 3.5s;
+}
+.tk-line:nth-child(6) {
+  animation-delay: 4.2s;
+}
+.tk-line:nth-child(7) {
+  animation-delay: 5s;
+}
+.tk-line:nth-child(8) {
+  animation-delay: 5.7s;
+}
+.tk-line:nth-child(9) {
+  animation-delay: 6.4s;
+}
+
+.tk-line1:nth-child(1) {
+  animation-delay: 0.7s;
+}
+.tk-line1:nth-child(2) {
+  animation-delay: 1.4s;
+}
+.tk-line1:nth-child(3) {
+  animation-delay: 2.1s;
+}
+.tk-line1:nth-child(4) {
+  animation-delay: 2.8s;
+}
+.tk-line1:nth-child(5) {
+  animation-delay: 3.5s;
+}
+.tk-line1:nth-child(6) {
+  animation-delay: 4.2s;
+}
+.tk-line1:nth-child(7) {
+  animation-delay: 5s;
+}
+.tk-line1:nth-child(8) {
+  animation-delay: 5.7s;
+}
+.tk-line1:nth-child(9) {
+  animation-delay: 6.2s;
+}
+@keyframes tkFade {
+  to {
+    opacity: 1;
+  }
+}
+.time-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  padding: 20px;
+}
+
+.menu-title {
+  color: cyan;
+  font-size: 26px;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px cyan;
+}
+
+.menu-btn {
+  width: 220px;
+  padding: 12px;
+  border: 2px solid cyan;
+  background: transparent;
+  color: cyan;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.menu-btn:hover {
+  background: rgba(0, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.menu-footer {
+  margin-top: 10px;
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  opacity: 0.8;
+  text-shadow: 0 0 6px red;
+}
+.red-screen {
+  background: rgb(255, 255, 255) !important;
+  filter: brightness(50%);
+}
+
+.help-text {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+
+.red-alert {
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 10px rgb(255, 255, 255);
+}
+.hidden {
+  display: none;
+}
+/* Full screen red mode */
+.help-fullscreen {
+  background: rgba(255, 0, 0, 0.95) !important;
+}
+.help-fullscreen1 {
+  background: rgba(0, 0, 0, 0.95) !important;
+}
+/* Removes any black box while in help mode */
+.help-fullscreen .menumodal-body {
+  width: 100%;
+  height: 100%;
+  background: transparent !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Reset when leaving help */
+.menumodal {
+  background: rgba(0, 0, 0, 0.95);
+}
+.help-fullscreen {
+  animation: alertPulse 1.2s infinite alternate;
+}
+
+@keyframes alertPulse {
+  from {
+    background: rgba(255, 0, 0, 0.7);
+  }
+  to {
+    background: rgba(255, 0, 0, 1);
+  }
+}
+.help-active {
+  background-color: black; /* or your original background */
+}
+.resized-image1 {
+  max-width: 100%;
+  max-height: 100%;
+}

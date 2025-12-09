@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="screw_style.css" />
+    <link rel="stylesheet" href="Menu_style.css" />
+    <title>HandPrint Futuristic City</title>
+  </head>
+  <body>
+    <!-- MAIN SCREEN -->
+    <div class="top_row"></div>
+    <div class="screw_1row center-content">
+      <img src="IMAGE/hand.png" id="Handprint" onclick="open_Text_robot()" />
+    </div>
+    <div class="spacer_row_big purple"></div>
+    <div class="bottom center">
+      <div class="smol-box">
+        <img class="resized-image regclick" src="" id="inventory1" />
+      </div>
+      <div class="smol-box">
+        <img class="resized-image regclick" src="" id="inventory2" />
+      </div>
+      <div class="smol-box">
+        <img class="resized-image regclick" src="" id="inventory3" />
+      </div>
+      <div class="smol-box">
+        <img class="resized-image regclick" src="" id="inventory4" />
+      </div>
+      <div class="smol-box">
+        <img class="resized-image regclick" src="" id="inventory5" />
+      </div>
+      <div class="smol-box">
+        <img class="resized-image regclick" src="" id="inventory6" />
+      </div>
+    </div>
+
+    <!-- AI DIALOGUE MODAL -->
+    <div class="modal" id="myModal">
+      <div class="modal-content">
+        <span class="close" onclick="hide_open_Text_robot()">&times;</span>
+
+        <div class="top_row"></div>
+
+        <div class="screw_1row center-content">
+          <div class="smol-box_ins">
+            <button id="startDialogueBtn" onclick="startDialogue()">
+              Turn on AI Interface
+            </button>
+
+            <div class="dialogue-container">
+              <div class="dialogue-modal" id="dialogueModal">
+                <pre id="dialogueText"></pre>
+              </div>
+
+              <div class="dialogue-input">
+                <input
+                  type="text"
+                  id="answer"
+                  placeholder="Type your response..."
+                />
+                <button onclick="checkInput()">Submit</button>
+                <div
+                  id="errorBox"
+                  style="
+                    display: none;
+                    color: #ff3b3b;
+                    margin-top: 5px;
+                    font-weight: bold;
+                  "
+                ></div>
+              </div>
+
+              <div id="suggestions" class="suggestions-box"></div>
+
+              <button id="flipAI" onclick="showScrewScreen()">
+                Turn AI Around
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="spacer_row_bigmodal"></div>
+        <div class="bottom1 center1">
+          <div class="smol-box1">
+            <img class="resized-image regclick" src="" id="inventory11" />
+          </div>
+          <div class="smol-box1">
+            <img class="resized-image regclick" src="" id="inventory21" />
+          </div>
+          <div class="smol-box1">
+            <img class="resized-image regclick" src="" id="inventory31" />
+          </div>
+          <div class="smol-box1">
+            <img class="resized-image regclick" src="" id="inventory41" />
+          </div>
+          <div class="smol-box1">
+            <img class="resized-image regclick" src="" id="inventory51" />
+          </div>
+          <div class="smol-box1">
+            <img class="resized-image regclick" src="" id="SBB_2" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCREW PUZZLE MODAL -->
+    <div id="screwScreen" class="screw-modal">
+      <div class="screw-content">
+        <span class="close" id="screwCloseBtn">&times;</span>
+
+        <div class="top_row1"></div>
+        <div class="spacer_row1"></div>
+
+        <div class="screw_1row1 screw_center1">
+          <div class="smol-box_comp1 screw_center1">
+            <img
+              src="IMAGE/1.screw.png"
+              class="no-cursor press-effect screw-driver-cursor"
+              id="B1"
+              data-removed="false"
+            />
+          </div>
+
+          <div class="smol-box_comp1"></div>
+
+          <div class="smol-box_comp1 screw_center1">
+            <img
+              src="IMAGE/4.screw.png"
+              class="no-cursor press-effect screw-driver-cursor"
+              id="B4"
+              data-removed="false"
+            />
+          </div>
+        </div>
+
+        <div class="screw_2row1 screw_center1">
+          <div class="smol-box_comp1 screw_center1">
+            <img
+              src="IMAGE/6.screw.png"
+              class="no-cursor press-effect screw-driver-cursor"
+              id="B6"
+              data-removed="false"
+            />
+          </div>
+        </div>
+
+        <div class="screw_3row1 screw_center1">
+          <div class="smol-box_comp1 screw_center1">
+            <img
+              src="IMAGE/8.screw.png"
+              class="no-cursor press-effect screw-driver-cursor"
+              id="B8"
+              data-removed="false"
+            />
+          </div>
+
+          <div class="smol-box_comp1"></div>
+
+          <div class="smol-box_comp1 screw_center1">
+            <img
+              src="IMAGE/10.screw.png"
+              class="no-cursor press-effect screw-driver-cursor"
+              id="B10"
+              data-removed="false"
+            />
+          </div>
+        </div>
+
+        <div class="spacer_row_big1"></div>
+
+        <div class="bottom1 center1">
+          <div class="smol-box1">
+            <img class="resized-image regclick" src="" id="inventory12" />
+          </div>
+          <div class="smol-box1">
+            <img class="resized-image regclick" src="" id="inventory22" />
+          </div>
+          <div class="smol-box1">
+            <img class="resized-image regclick" src="" id="inventory32" />
+          </div>
+          <div class="smol-box1">
+            <img class="resized-image regclick" src="" id="inventory42" />
+          </div>
+          <div class="smol-box1">
+            <img class="resized-image regclick" src="" id="inventory52" />
+          </div>
+          <div class="smol-box1">
+            <img class="resized-image regclick" src="" id="SBB_3" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MENU MODAL -->
+    <div class="menumodal center-content" id="menumodal">
+      <span class="close" onclick="hideModal()">&times;</span>
+      <div class="menumodal-body center-content">
+        <!-- MAIN MENU -->
+        <div id="menuPage" class="menu-page">
+          <h2 class="menu-title">⧖ TIME KEEPER CONSOLE</h2>
+          <button class="menu-btn" onclick="openNotes()">
+            📜 Time Keeper’s Note
+          </button>
+          <button class="menu-btn" onclick="openPortalStatus()">
+            🌀 Portal Status
+          </button>
+          <button class="menu-btn" onclick="openInventory()">
+            🎒 Inventory
+          </button>
+          <button class="menu-btn" onclick="openSettings()">⚙️ Settings</button>
+          <button class="menu-btn" onclick="openHelp()">❓ Help</button>
+          <p class="menu-footer">“Your human blood is the key.”</p>
+          <p class="menu-footer tk-line timekeeper-textZ">
+            ALWAYS REMEMBER THE MENU I LEFT FOR YOU HAS THE HINTS NEEDED TO
+            BANISH THE MONSTER
+          </p>
+        </div>
+
+        <!-- NOTES PAGE -->
+        <div id="notesPage" class="menu-page hidden">
+          <h2 class="menu-title">📜 Time Keeper’s Notes</h2>
+          <button class="menu-btn" onclick="showHint(1)">Portal 1 Hint</button>
+          <button class="menu-btn" onclick="showHint(2)">Portal 2 Hint</button>
+          <button class="menu-btn" onclick="showHint(3)">Portal 3 Hint</button>
+          <button class="menu-btn" onclick="showHint(4)">Portal 4 Hint</button>
+          <button class="menu-btn locked" id="portal5Hint" disabled>
+            Portal 5 Hint (Locked)
+          </button>
+          <button class="menu-btn back-btn" onclick="returnToMenu()">
+            ← Back
+          </button>
+          <p id="hintText" class="hint-output"></p>
+        </div>
+
+        <!-- PORTAL STATUS PAGE -->
+        <div id="statusPage" class="menu-page hidden">
+          <h2 class="menu-title">🌀 Portal Status</h2>
+          <p id="portalStatus1" class="status-line help-text">Portal 1: -</p>
+          <p id="portalStatus2" class="status-line help-text">Portal 2: -</p>
+          <p id="portalStatus3" class="status-line help-text">Portal 3: -</p>
+          <p id="portalStatus4" class="status-line help-text">
+            Portal 4: In Progress
+          </p>
+          <p id="portalStatus5" class="status-line help-text locked">
+            Portal 5: Not Ready
+          </p>
+          <button class="menu-btn back-btn" onclick="returnToMenu()">
+            ← Back
+          </button>
+        </div>
+
+        <!-- INVENTORY PAGE -->
+        <div id="inventoryPage" class="menu-page hidden">
+          <h2 class="menu-title">🎒 Inventory</h2>
+
+          <div class="center">
+            <div class="smol-box1"><img src="" id="" class="" /></div>
+            <div class="smol-box1"><img src="" id="" class="" /></div>
+            <div class="smol-box1"><img src="" id="" class="" /></div>
+            <div class="smol-box1"><img src="" id="" class="" /></div>
+            <div class="smol-box1"><img src="" id="" class="" /></div>
+            <div class="smol-box1"><img src="" id="" class="" /></div>
+          </div>
+          <ul id="inventoryList"></ul>
+          <button class="menu-btn back-btn" onclick="returnToMenu()">
+            ← Back
+          </button>
+        </div>
+
+        <!-- HELP PAGE -->
+        <div id="helpPage" class="menu-page hidden">
+          <h2 class="menu-title red-alert">❗ HELP REQUESTED ❗</h2>
+          <p class="help-text">
+            A signal has been sent to the 4 Keys to Midnight team.
+          </p>
+          <p class="help-text">Stand by... we’re coming.</p>
+          <button class="menu-btn back-btn" onclick="returnToMenu()">
+            ← Back
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- AUDIO -->
+    <audio
+      id="unscrew_audio"
+      src="Sounds/unscrew.mp4"
+      type="audio/mp4"
+      preload="auto"
+    ></audio>
+    <audio src="Sounds/backgroundaudio.mp3" id="bgAudio" loop></audio>
+    <script>
+      document.addEventListener(
+        "click",
+        () => {
+          document.getElementById("bgAudio").play();
+        },
+        { once: true }
+      );
+    </script>
+
+    <button id="Menu" onclick="timeKeepersmenu()">MENU</button>
+    <script src="script.js"></script>
+    <script src="Menu_script.js"></script>
+  </body>
+</html>
