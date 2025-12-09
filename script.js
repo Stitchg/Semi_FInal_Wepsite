@@ -454,7 +454,7 @@ function collectPowerSource() {
 
   // Redirect with UPDATED inventory
   setTimeout(function () {
-    window.location.replace(`https://nnn9t3.csb.app/?inv=${newInv}`);
+    window.location.replace(`https://stitchg.github.io/Final_Room_Time/?inv=${newInv}`);
   }, 500);
 }
 
@@ -610,3 +610,4 @@ if (!modalClose) {
 if (modalClose) {
   modalClose.addEventListener("click", hide_open_Text_robot);
 }
+
