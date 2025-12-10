@@ -305,6 +305,12 @@ function checkInput() {
   currentIndex++;
   showDialogue();
 }
+document.getElementById("userInput").addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault(); 
+    checkInput();
+  }
+});
 
 /* =========================================
    SCREW PUZZLE SYSTEM (SECOND)
@@ -610,4 +616,5 @@ if (!modalClose) {
 if (modalClose) {
   modalClose.addEventListener("click", hide_open_Text_robot);
 }
+
 
